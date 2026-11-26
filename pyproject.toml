@@ -1,0 +1,27 @@
+[project]
+name = "pomodoro"
+version = "0.1.0"
+description = "Bongo Cat style mini floating Pomodoro desktop timer"
+requires-python = ">=3.11"
+dependencies = [
+    "pyside6>=6.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+pomodoro = "pomodoro.app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pomodoro"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
